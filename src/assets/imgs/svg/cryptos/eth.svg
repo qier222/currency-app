@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3498px" height="3498px" viewBox="0 0 3498 3498" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>页面 1</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ethereum-1">
+            <circle id="椭圆形" stroke="#979797" fill="#ECEFF0" cx="1749" cy="1749" r="1748.5"></circle>
+            <polygon id="路径" fill="#343434" fill-rule="nonzero" points="1749.26615 424 1732.50707 480.962891 1732.50707 2133.89406 1749.26615 2150.62316 2516.5383 1697.09063"></polygon>
+            <polygon id="路径" fill="#8C8C8C" fill-rule="nonzero" points="1749.27215 424 982 1697.09062 1749.27215 2150.62916 1749.27215 1348.34582"></polygon>
+            <polygon id="路径" fill="#3C3C3B" fill-rule="nonzero" points="1749.26615 2295.90252 1739.8223 2307.41502 1739.8223 2896.22543 1749.26615 2923.80746 2517 1842.59783"></polygon>
+            <polygon id="路径" fill="#8C8C8C" fill-rule="nonzero" points="1749.27215 2923.80146 1749.27215 2295.89053 982 1842.58584"></polygon>
+            <polygon id="路径" fill="#141414" fill-rule="nonzero" points="1749.26615 2150.62316 2516.52631 1697.09662 1749.26615 1348.35182"></polygon>
+            <polygon id="路径" fill="#393939" fill-rule="nonzero" points="982 1697.09062 1749.26016 2150.62316 1749.26016 1348.34582"></polygon>
+        </g>
+    </g>
+</svg>
