@@ -4,17 +4,32 @@ function resolve(dir) {
 }
 
 module.exports = {
-  // pwa: {
-  //   name: "My App",
-  //   appleMobileWebAppCapable: "yes",
-  //   appleMobileWebAppStatusBarStyle: "black",
-  //   workboxOptions: {
-  //     swSrc: "dev/sw.js",
-  //   },
-  // },
+  pwa: {
+    name: "CurrencyApp",
+    themeColor: "#ffffff",
+    manifestOptions: {
+      background_color: "#335eea",
+    },
+    // workboxOptions: {
+    //   swSrc: "dev/sw.js",
+    // },
+  },
+
+  pages: {
+    index: {
+      entry: "src/main.js",
+      template: "public/index.html",
+      filename: "index.html",
+      title: "CurrencyApp",
+      chunks: ["chunk-vendors", "chunk-common", "index"],
+    },
+  },
   chainWebpack(config) {
     config.module.rules.delete("svg");
-    config.module.rule("svg").exclude.add(resolve("src/assets/imgs")).end();
+    config.module
+      .rule("svg")
+      .exclude.add(resolve("src/assets/imgs"))
+      .end();
     config.module
       .rule("icons")
       .test(/\.svg$/)

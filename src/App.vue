@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :data-theme="appSettings.theme">
+  <div id="app">
     <Navbar />
     <main>
       <CoinBox
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapMutations, mapState } from "vuex";
 import CoinBox from "./components/CoinBox";
 import Navbar from "./components/Navbar";
 
@@ -41,6 +41,14 @@ export default {
   },
   beforeMount() {
     this.$i18n.locale = this.appSettings.lang;
+    const pwaFirstRun = localStorage.getItem("firstRun");
+    if (
+      pwaFirstRun === null &&
+      window.matchMedia("(display-mode: standalone)").matches
+    ) {
+      window.resizeTo(388, 732);
+      localStorage.setItem("firstRun", "no");
+    }
   },
   mounted() {
     this.$store.dispatch("fetchRates");
@@ -51,6 +59,15 @@ export default {
         this.$store.dispatch("fetchRates");
       }, 60000);
     }
+    this.updateTitleBarColor();
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", () => {
+        if (this.appSettings.theme === "auto") this.updateTitleBarColor();
+      });
+  },
+  methods: {
+    ...mapMutations(["updateTitleBarColor"]),
   },
 };
 </script>
@@ -78,20 +95,9 @@ export default {
   --menu-bg-color: #28292c;
 }
 
-[data-theme="auto"] {
-  @media (prefers-color-scheme: dark) {
-    --primary-color: #3f8cff;
-    --primary-bg-color: #35383c;
-    --font-color: #fff;
-    --placeholder-color: rgba(255, 255, 255, 0.6);
-    --button-color: #666;
-    --bg-color: #202124;
-    --menu-bg-color: #28292c;
-  }
-}
-
 body {
   margin: 0;
+  background: var(--bg-color);
 }
 body::-webkit-scrollbar {
   display: none;

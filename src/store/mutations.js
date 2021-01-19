@@ -19,6 +19,7 @@ const mutatsions = {
   },
   changeTheme(state, theme) {
     state.appSettings.theme = theme;
+    this.commit("updateTitleBarColor");
   },
   changeLang(state, lang) {
     state.appSettings.lang = lang;
@@ -31,6 +32,18 @@ const mutatsions = {
       }
       return coin;
     });
+  },
+  updateTitleBarColor(state) {
+    let appearance = state.appSettings.theme;
+    if (appearance === "auto" || appearance === undefined) {
+      appearance = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    document.body.setAttribute("data-theme", appearance);
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute("content", appearance === "dark" ? "#202124" : "#fff");
   },
 };
 

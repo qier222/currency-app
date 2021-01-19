@@ -16,12 +16,12 @@ const saveToLocalStorage = (store) => {
   if (localStorage.getItem("isInitData") === "yes") {
     axios
       .get("/api/currency/all")
-      .then(function (response) {
+      .then(function(response) {
         store.state.coins = response.data.data;
         localStorage.setItem("state", JSON.stringify(store.state));
         localStorage.setItem("isInitData", "no");
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }
