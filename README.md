@@ -3,8 +3,13 @@
     <img src="images/logo.png" alt="Logo" width="192" height="192">
   </div>
   <h2 align="center" style="font-weight: 600">CurrencyApp</h2>
+  
   <p align="center">
     The Ultimate Currency Converter (PWA)
+    <br />
+    <a href="https://currency.qier222.com" target="blank"><strong>🌎 Visit live site</strong></a>
+    <br />
+    <br />
   </p>
 </p>
 
